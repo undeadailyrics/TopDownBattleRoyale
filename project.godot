@@ -1,0 +1,62 @@
+[gd_project]
+
+config_version=5
+name="Top Down Battle Royale"
+version="0.1.0"
+
+[application]
+
+config/name="Top Down Battle Royale"
+config/version="0.1.0"
+run/main_scene="res://scenes/main_menu.tscn"
+config/features=PackedStringArray("4.1")
+config/icon="res://assets/icon.svg"
+
+[autoload]
+
+GameManager="*res://scripts/singletons/game_manager.gd"
+AudioManager="*res://scripts/singletons/audio_manager.gd"
+ProgressionManager="*res://scripts/singletons/progression_manager.gd"
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/handheld_mode=true
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_height"
+
+[input]
+
+move_up={
+	"deadzone": 0.5,
+	"events": [InputEventKey{ keycode=87 }]
+}
+move_down={
+	"deadzone": 0.5,
+	"events": [InputEventKey{ keycode=83 }]
+}
+move_left={
+	"deadzone": 0.5,
+	"events": [InputEventKey{ keycode=65 }]
+}
+move_right={
+	"deadzone": 0.5,
+	"events": [InputEventKey{ keycode=68 }]
+}
+aim={
+	"deadzone": 0.5,
+	"events": [InputEventJoypadMotion{ axis=3, axis_value=1.0 }]
+}
+fire={
+	"deadzone": 0.0,
+	"events": [InputEventMouseButton{ button_index=1 }, InputEventJoypadButton{ button_index=7 }]
+}
+
+[physics]
+
+2d/default_gravity=0
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
